@@ -1,0 +1,37 @@
+## 📌 Descripción  
+<!-- Explica brevemente qué cambios realizaste y por qué -->
+Ejemplo: Se agregó el componente `ProfilePhoto` con opción de subir y modificar la foto de perfil.  
+
+---
+
+## ✅ Cambios realizados  
+- [ ] Nueva funcionalidad  
+- [ ] Corrección de bug  
+- [ ] Refactor de código  
+- [ ] Actualización de estilos  
+- [ ] Documentación  
+
+---
+
+## 🔍 Detalles técnicos  
+<!-- Explica cómo implementaste los cambios (librerías usadas, patrones, etc.) -->  
+
+---
+
+## 🧪 Cómo probar los cambios  
+1. Pasos para reproducir la funcionalidad.  
+2. Screenshots o gifs si aplica.  
+3. Comandos necesarios para levantar la app o correr tests.  
+
+---
+
+## 📂 Impacto  
+<!-- Indica si los cambios afectan otras partes del sistema, si requieren migraciones o cambios en el entorno -->  
+
+---
+
+## 🚀 Checklist  
+- [ ] El código compila sin errores  
+- [ ] Se agregaron pruebas unitarias / de integración  
+- [ ] Se actualizó la documentación si aplica  
+- [ ] Los cambios fueron revisados localmente  

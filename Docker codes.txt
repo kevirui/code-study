@@ -1,0 +1,137 @@
+docker images: devuelve las imágenes descargadas
+docker pull "app": descarga la imagen de la aplicación
+
+
+// MacOS o con chip de Apple
+docker pull --platform linux/x86_64 MySQL
+
+docker create "imagen": crea contenedor basado en la imagen 
+docker container create "imagen": same but less long
+
+docker start "idContenedor": run container
+docker ps: container list
+docker ps -a: container list
+
+docker stop "id/nombre_container": stop container
+
+docker create --name "to_name" "by_name": change name container
+
+docker rm "id/nombre_container": remove container
+
+docker create -p"machinePort":"containerPort" --name "id/nombre_container" => make a port for a container
+
+docker logs "id/nombre_container": return container logs
+
+function to hear logs:
+docker logs --follow "id/nombre_container"
+
+docker run -> find image, download, create and run container
+
+to don't see logs:
+docker run -d mongo
+
+to do all:
+docker run --name "id/nombre_container" -p"machinePort":"containerPort" -d "image"
+
+to create a container with enviroments with mongo:
+docker create -p"machienPort":"containerPort" --name "image" -e "envLine" -e "..etcEnvs"
+
+to list all networks
+docker network ls
+
+to create a network
+docker network create "name"
+
+to remove a network
+docker network rm "name"
+
+to create a image by docker file
+docker build -t "image_name":"tag" "project_rute ( docker file )"
+
+to create a container and connect with red:
+docker create -p"machinePort":"containerPort" --name "image" --network "network" -e "...envs" "imageBased"
+
+DockerFile:
+FROM "image":"version" -> 
+
+RUN mkdir -p /home/app -> Where my app file is
+
+COPY "routeHost" "destination" -> Where code is
+
+EXPOSE "port" -> Expone un puerto para que se pueda escuchar
+
+CMD "['image', 'routeExecutable']"
+
+Dockerfile.dev:
+FROM "image":"version"
+
+RUN npm i -g nodemon
+RUN mkdir -p /home/app -> Where my app file is
+
+WORKDIR "dirWork"
+
+EXPOSE "port" -> Expone un puerto para que se pueda escuchar
+
+CMD "['nodemon', 'file']"
+
+docker-compose.yml:
+version: "version"
+services:
+	...container names:
+		build: .
+		ports: 
+			- "machinePort:containerPort"
+			- etc ports
+		links:
+			- "containerName"
+		image: "image_name"
+		environment:
+			- envLinesWithAssigns...
+		volumes:
+			- "name-data":"routefiles"
+			# MySQL -> /var/lib/MySQL
+			# PostgreSQL -> /var/lib/PostgreSQL/data
+volumes:
+	"name-data:"
+	otros-volúmenes...
+
+docker-compose-dev.yml:
+version: "version"
+services:
+	...container names:
+		build: 
+			context: .
+			dockerfile: Dockerfile.dev
+		ports: 
+			- "machinePort:containerPort"
+			- etc ports
+		links:
+			- "containerName"
+		volumes:
+			- .:/dir_container
+		image: "image_name"
+		environment:
+			- envLinesWithAssigns...
+		volumes:
+			- "name-data":"routefiles"
+			# MySQL -> /var/lib/MySQL
+			# PostgreSQL -> /var/lib/PostgreSQL/data
+volumes:
+	"name-data:"
+	otros-volúmenes...		
+
+on CMD:
+docker compose up -> to run a docker compose file
+docker compose down -> to stop and remove containers, images from docker compose file
+docker compose -f "docker-compose-dev.yml" up
+
+
+Docker containers:
+- download a image
+- create a network
+- create a container
+	- assign ports
+	- assign names
+	- assign envs
+	- specify network
+	- indicate image:network

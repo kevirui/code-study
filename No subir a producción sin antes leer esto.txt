@@ -1,0 +1,29 @@
+Check 1: ¿Tenés variables de entorno configurada?
+
+- Nunca subir claves API o credenciales directamente en el código.
+- Usar .env y una libreria como dotenv.
+- Asegurar de tener en el .gitignore ".env" y ".env.local"
+- Revisión de secrets antes del deploy. Podés usar git-secrets.
+
+Check 2: ¿Tu APP tiene manejo de errores?
+
+- Usar logs claros y manejo de errores con mensajes controlados.
+
+Check 3: ¿Probaste tu APP con datos reales?
+
+- Simular trafico real. Usar herramientas como Postman.
+
+Check 4: ¿El código está limpio y con dependencias necesarias?
+
+- No subir código con:
+	- console.logs everywhere
+	- funciones sin usar
+	- dependencias que ya no sirven
+- Usar npm prune y eslint antes de subir
+- Hacer npm audit para ver vulnerabilidades
+
+Check 5: ¿Tu BUILD funciona y se puede revertir fácil?
+
+- Hacerlo local antes de subir: "npm run build"
+- Documentar como revertir la versión por si algo falla.
+
