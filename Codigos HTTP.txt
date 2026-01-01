@@ -1,0 +1,25 @@
+✅ Códigos de Éxito (2xx)
+🔹 200 OK – La solicitud fue exitosa.
+🔹 201 Created – El recurso fue creado exitosamente.
+🔹 202 Accepted – La solicitud fue aceptada, pero aún no procesada.
+🔹 204 No Content – Solicitud exitosa, pero sin contenido en la respuesta.
+
+🔁 Redirecciones (3xx)
+🔸 301 Moved Permanently – El recurso fue movido de forma permanente.
+🔸 302 Found – El recurso fue movido temporalmente.
+🔸 304 Not Modified – El recurso no ha cambiado desde la última solicitud.
+
+❌ Errores de Cliente (4xx)
+🚫 400 Bad Request – Solicitud malformada.
+🔐 401 Unauthorized – Falta autenticación válida.
+⛔ 403 Forbidden – El acceso está prohibido.
+🔍 404 Not Found – El recurso no existe.
+🚷 405 Not Allowed – El método HTTP no está permitido.
+⏱️ 408 Request Timeout – El servidor no recibió la solicitud completa a tiempo.
+
+🔥 Errores de Servidor (5xx)
+💥 500 Internal Server Error – Error genérico del servidor.
+🧱 501 Not Implemented – Método no soportado por el servidor.
+🔌 502 Bad Gateway – El servidor actuó como gateway y recibió una respuesta inválida.
+🚫 503 Service Unavailable – El servidor está sobrecargado o en mantenimiento.
+⏳ 504 Gateway Timeout – El servidor gateway no recibió respuesta a tiempo.
